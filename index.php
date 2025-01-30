@@ -15,3 +15,9 @@ else {
 }
 exit();
 ?>
+<html>
+    <head>
+<title>Redi</title>
+    </head>
+    
+</html>
