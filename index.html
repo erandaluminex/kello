@@ -1,4 +1,11 @@
-<?php
+
+<html>
+    <head>
+<title>Redi</title>
+    </head>
+<body>
+
+    <?php
 $userAgent = $_SERVER['HTTP_USER_AGENT'];
 
 if(strpos($userAgent, 'iPhone') !== false || strpos($userAgent, 'iPad') !== false || strpos($userAgent, 'iPod') !== false) {
@@ -15,9 +22,5 @@ else {
 }
 exit();
 ?>
-<html>
-    <head>
-<title>Redi</title>
-    </head>
-    
+</body>
 </html>
